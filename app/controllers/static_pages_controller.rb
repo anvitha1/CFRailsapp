@@ -10,4 +10,10 @@ class StaticPagesController < ApplicationController
     @products = Product.limit(3)
   end
   
+# def landing page
+#   @products.each_with_index do |item, index|
+#     puts "current_index: #{index}"
+#   end
+# end
+  
 end
