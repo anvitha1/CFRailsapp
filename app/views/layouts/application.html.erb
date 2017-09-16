@@ -28,14 +28,15 @@
         <li><%= link_to 'About', static_pages_about_path %></li>
         <li><%= link_to 'Products', products_path %></li>
         <li><%= link_to 'Contact', static_pages_contact_path %></li>
-        <div class="navbar-nav navbar-right">
-           <%= form_tag(products_path, method: 'get', class: "navbar-form navbar-right search-bar") do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:q, "", type: "text", class: "form-control", placeholder: "search") %>
-            <%= submit_tag("Search", class: "btn btn-default") %>
-           <% end %>
-        </div>
       </ul>
+      
+      <%= form_tag(products_path, method: 'get', class: 'navbar-form navbar-right') do %>
+        <div class="form-group">
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag(:q, "", type: "text", class: "form-control", placeholder: "search") %>
+        </div>
+          <%= submit_tag("Search", class: "btn btn-default") %>
+      <% end %>
       
     </div> <!--end navbar-collapse-->
     </div>  <!--end container-fluid-->
