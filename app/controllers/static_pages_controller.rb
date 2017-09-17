@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
     @email = params[:email]
     @message = params[:message]
     ActionMailer::Base.mail(from: @email,
-        to: 'anvitha1@gmail.com',
+        to: 'app75879458@heroku.com',
         subject: "A new contact form message from #{@name}",
         body: @message).deliver_now
   end
