@@ -30,7 +30,7 @@
         <li><%= link_to 'Contact', static_pages_contact_path %></li>
       </ul>
       
-      <%= form_tag(products_path, method: 'get', class: 'navbar-form navbar-right') do %>
+      <%= form_tag(products_path, method: "get", class: "navbar-form navbar-right") do %>
         <div class="form-group">
           <%= label_tag(:q, "Search for:") %>
           <%= text_field_tag(:q, "", type: "text", class: "form-control", placeholder: "search") %>
