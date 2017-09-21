@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :products
   
   get 'static_pages/about'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   post 'static_pages/thank_you'
   
   resources :orders, only: [:index, :show, :create, :destroy]
+  
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
