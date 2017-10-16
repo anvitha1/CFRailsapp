@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :products
+  
+resources :products do
+  resources :comments
+end
+resources :users
   
   get 'static_pages/about'
   
