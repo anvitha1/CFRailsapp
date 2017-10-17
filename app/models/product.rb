@@ -1,6 +1,9 @@
 class Product < ActiveRecord::Base
     has_many :orders
     has_many :comments
+    
+    validates :name, presence: true         #requires all new products to have a name
+    
     def self.search(search_term)
 
         if Rails.env.development?
