@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user!
+	load_and_authorize_resource #Helper method -check's user's abilities to make sure they are authorized to perform the action
     
     def index
     end
@@ -14,6 +16,4 @@ class OrdersController < ApplicationController
     
     def destroy
     end
-    
-    before_action :authenticate_user!
 end

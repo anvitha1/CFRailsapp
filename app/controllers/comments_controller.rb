@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+	before_action :authenticate_user!
+	load_and_authorize_resource #Helper method -check's user's abilities to make sure they are authorized to perform the action
 
 	def create
 	    @product = Product.find(params[:product_id])

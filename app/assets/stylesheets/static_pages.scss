@@ -18,14 +18,23 @@ ADDRESS,
 h2,
 h4,
 p, 
-li
+li,
+.search-style
 {
     font-family: 'Quicksand', sans-serif;
 }
 
+li,
+.search-style {
+    font-size: 1.5em;
+}
+
+.search-style {
+       font-weight: 400;
+}
+
 li {
     color: white;
-    font-size: 1.5em;
 }
 
 body > .container {

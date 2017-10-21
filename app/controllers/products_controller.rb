@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  
+  before_action :authenticate_user!
+	load_and_authorize_resource #Helper method -check's user's abilities to make sure they are authorized to perform the action
 
   # GET /products
   # GET /products.json
