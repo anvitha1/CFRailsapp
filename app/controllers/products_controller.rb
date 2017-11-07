@@ -5,8 +5,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
  def index
+  byebug
   if params[:q]
     search_term = params[:q]
+    logger.debug "Product: #{@products}"
     @products = Product.search(search_term)
   else
     @products = Product.all
