@@ -49,7 +49,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.20.0'
   
 end
 
@@ -62,3 +62,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'rails-controller-testing'
 
 gem 'stripe'
+
+gem "brakeman", :require => false

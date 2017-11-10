@@ -1,0 +1,47 @@
+
+== Brakeman Report ==
+
+Application Path: /home/ubuntu/workspace
+Rails Version: 4.2.5
+Brakeman Version: 4.0.1
+Scan Date: 2017-11-10 00:40:50 +0000
+Duration: 0.762602695 seconds
+Checks Run: BasicAuth, BasicAuthTimingAttack, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing
+
+== Overview ==
+
+Controllers: 8
+Models: 5
+Templates: 38
+Errors: 0
+Security Warnings: 3
+
+== Warning Types ==
+
+Cross-Site Scripting: 1
+Denial of Service: 1
+SQL Injection: 1
+
+== Warnings ==
+
+Confidence: High
+Category: SQL Injection
+Check: SQLCVEs
+Message: Rails 4.2.5 contains a SQL injection vulnerability (CVE-2016-6317). Upgrade to 4.2.7.1
+File: Gemfile.lock
+Line: 102
+
+Confidence: Medium
+Category: Cross-Site Scripting
+Check: ContentTag
+Message: Rails 4.2.5 content_tag does not escape double quotes in attribute values (CVE-2016-6316). Upgrade to 4.2.7.1
+File: Gemfile.lock
+Line: 102
+
+Confidence: Medium
+Category: Denial of Service
+Check: MimeTypeDoS
+Message: Rails 4.2.5 is vulnerable to denial of service via mime type caching (CVE-2016-0751). Upgrade to Rails version 4.2.5.1
+File: Gemfile.lock
+Line: 102
+
