@@ -9,6 +9,13 @@ describe UsersController, :type => :controller do
   
   describe 'GET #show' do
     
+    context 'when a user is not logged in' do
+      it 'redirects to login' do
+        get :show, id: @user.id
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+    
     context 'when a user is logged in' do
       before do 
         sign_in @user
@@ -22,15 +29,8 @@ describe UsersController, :type => :controller do
       end
       
     end
-
-    context 'when a user is not logged in' do
-      it 'redirects to login' do
-        get :show, id: @user.id
-        expect(response).to redirect_to(new_user_session_path)
-      end
-    end
     
-  context 'user cannot see other users page' do
+    context 'user cannot see other users page' do
       before do
         sign_in @user2
       end
