@@ -86,8 +86,6 @@ Rails.application.configure do
   
   config.web_socket_server_url = "wss://the-bike-store.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://the-bike-store.herokuapp.com', 'http://the-bike-store.herokuapp.com']
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = {:host => 'the-bike-store.herokuapp.com', :protocol => 'http'}
   config.cache_store = :dalli_store,
                       (ENV["MEMCACHIER_SERVERS"] || "").split(","),
                       {:username => ENV["MEMCACHIER_USERNAME"],
@@ -97,5 +95,4 @@ Rails.application.configure do
                        :socket_failure_delay => 0.2,
                        :down_retry_delay => 60
                        }
-                       
 end
