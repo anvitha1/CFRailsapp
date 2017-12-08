@@ -14,7 +14,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = current_user
+    if current_user == nil
+      redirect_to('/login')
+    elsif current_user.id != params[:id].to_f
+      redirect_to('/')
+    else
+      @user = current_user
+    end
   end
 
   # GET /users/new
